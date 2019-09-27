@@ -1,7 +1,20 @@
-const express = require('express')
-const Vent = require('./vent/model')
+const express = require(
+  'express'
+)
+const ventRouter = require(
+  './vent/router'
+)
+const bodyParser = require(
+  'body-parser'
+)
 
 const app = express()
+
+const jsonParser = bodyParser.json()
+
+app.use(jsonParser)
+
+app.use(ventRouter)
 
 const port = process
   .env

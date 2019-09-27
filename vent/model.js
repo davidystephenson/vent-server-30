@@ -9,6 +9,9 @@ const Vent = db.define(
       type: Sequelize.BOOLEAN,
       defaultValue: false
     }
+  },
+  {
+    tableName: 'some-vents'
   }
 )
 
