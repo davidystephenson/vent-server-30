@@ -2,4 +2,13 @@ const express = require('express')
 
 const app = express()
 
-app.listen(4000)
+const port = process
+  .env
+  .PORT ||
+  4000
+
+function onListen () {
+  console.log(`Listening on :${port}`)
+}
+
+app.listen(port, onListen)
