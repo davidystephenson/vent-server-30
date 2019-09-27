@@ -7,11 +7,14 @@ const ventRouter = require(
 const bodyParser = require(
   'body-parser'
 )
+const cors = require('cors')
 
 const app = express()
 
-const jsonParser = bodyParser.json()
+const corsMiddleware = cors()
+app.use(corsMiddleware)
 
+const jsonParser = bodyParser.json()
 app.use(jsonParser)
 
 app.use(ventRouter)
